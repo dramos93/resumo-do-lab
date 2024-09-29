@@ -15,3 +15,7 @@ Opex é despesa operacional, é gasto conforme o uso, seja vertical, horizontal 
 
 > Mapas Mentais AZ-900
 https://art-verse.com/2021/01/16/microsoft-azure-900-fundamentals-cloud-computing-cheat-sheet-1-free-download/
+
+---
+
+Alta disponibilidade - A microsoft, para cada, produto darante uma porcentagem mínima para manter o produto disponível. O que significa que o produto pode sair fora do ar e que está previsto em contrato. Se o tempo for maior que o previsto, a microsoft ressarci devolvento o tempo excedente em voucher.
