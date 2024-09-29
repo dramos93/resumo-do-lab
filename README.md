@@ -26,3 +26,8 @@ https://art-verse.com/2021/01/16/microsoft-azure-900-fundamentals-cloud-computin
 > Governança - Como gerir os recursos. Fazer auditoria, SLA.
 > Gerenciabilidade - Pode monitorar e editar de várias formas, como via navegador, terminal, arquivo e api.  
 \* Importante lembrar que SLA é o tempo que o serviço está disponível.
+
+---
+
+IAAS - Infraestrutura como serviço.
+PAAS - Plataforma como serviço.
