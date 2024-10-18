@@ -37,3 +37,39 @@ IAAS - Infraestrutura como serviço. Teremos mais acesso, mas interatividade. É
 PAAS - Plataforma como serviço. Já não se importa mais com o sistema operacional.
 SAAS - Software como serviço. Tem acesso direto aos aplicativos. Menos configurações possíveis.
 Ex.: Office 365.
+
+## Redundância de Armazenamento
+Aqui está uma explicação detalhada sobre os tipos de redundância de armazenamento no Azure e o número de cópias envolvidas:
+
+### 1. **LRS (Locally Redundant Storage)**
+- **Cópias**: Mantém 3 cópias dos dados.
+- **Localização**: Todas as cópias estão dentro de um único datacenter (ou seja, dentro de uma mesma região).
+- **Risco**: Protege contra falhas locais de hardware, mas não contra falhas ou desastres na região inteira (ex.: terremoto, incêndio).
+- **Uso comum**: Cenários de menor custo onde a alta disponibilidade regional não é crítica.
+
+### 2. **ZRS (Zone-Redundant Storage)**
+- **Cópias**: Mantém 3 cópias dos dados.
+- **Localização**: Distribui as cópias entre diferentes zonas de disponibilidade dentro da mesma região. Cada zona é um conjunto de datacenters fisicamente separados.
+- **Risco**: Protege contra falhas em zonas específicas, como queda de energia em um datacenter, pois as cópias estão em locais diferentes dentro da mesma região.
+- **Uso comum**: Aplicações que requerem alta disponibilidade dentro de uma única região, mas não necessariamente recuperação de desastres em nível global.
+
+### 3. **GRS (Geo-Redundant Storage)**
+- **Cópias**: Mantém 6 cópias dos dados (3 em uma região primária + 3 em uma região secundária).
+- **Localização**: As 3 cópias primárias estão em um único datacenter (como LRS), e as 3 cópias secundárias estão em uma região geograficamente distante (em um datacenter de outra região).
+- **Risco**: Protege contra falhas regionais completas, como desastres naturais. No entanto, o acesso à cópia secundária só é permitido no caso de um failover.
+- **Uso comum**: Cenários onde a recuperação de desastres em nível global é importante.
+
+### 4. **GZRS (Geo-Zone-Redundant Storage)**
+- **Cópias**: Mantém 6 cópias dos dados (3 cópias distribuídas entre diferentes zonas de uma região primária + 3 cópias em uma região secundária).
+- **Localização**: Combina o ZRS (3 cópias em diferentes zonas de uma região) com a replicação geográfica (3 cópias em uma região secundária).
+- **Risco**: Protege tanto contra falhas de zona quanto contra desastres regionais. Em caso de falha regional, as cópias secundárias podem ser ativadas via failover.
+- **Uso comum**: Para cargas de trabalho críticas que exigem a mais alta disponibilidade e recuperação de desastres.
+
+### Resumo:
+- **LRS**: 3 cópias em um datacenter dentro da mesma região.
+- **ZRS**: 3 cópias em diferentes zonas de uma única região.
+- **GRS**: 6 cópias (3 em uma região primária e 3 em uma secundária geograficamente distante).
+- **GZRS**: 6 cópias (3 entre diferentes zonas de uma região primária + 3 em uma região secundária).
+
+Isso ajuda a garantir a alta disponibilidade e a recuperação de desastres de acordo com as necessidades da sua aplicação.
+
